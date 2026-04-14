@@ -179,9 +179,9 @@
     transition: transform 0.3s var(--ease-out-expo), background 0.2s ease, border-color 0.2s ease;
   }
 
-  /* ============ FLOATING AVATAR ============ */
+  /* ============ FLOATING AVATAR + GLOW ============ */
   .avatar-wrap {
-    animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite, avatar-glow 3.5s ease-in-out infinite;
   }
 
   @keyframes float {
@@ -189,22 +189,45 @@
     50% { transform: translateY(-6px); }
   }
 
-  /* ============ AVATAR GLOW PULSE ============ */
-  .avatar-wrap::after {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: 50%;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    opacity: 0;
-    animation: glow-pulse 4s ease-in-out infinite;
-    pointer-events: none;
-    z-index: -1;
+  @keyframes avatar-glow {
+    0%, 100% {
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.14),
+        0 0 40px 4px rgba(94, 230, 165, 0.35),
+        0 0 90px 10px rgba(94, 230, 165, 0.18),
+        0 0 140px 20px rgba(94, 230, 165, 0.08);
+    }
+    50% {
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.14),
+        0 0 60px 6px rgba(94, 230, 165, 0.55),
+        0 0 130px 16px rgba(94, 230, 165, 0.3),
+        0 0 200px 30px rgba(94, 230, 165, 0.12);
+    }
   }
 
-  @keyframes glow-pulse {
-    0%, 100% { opacity: 0; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.15); }
+  /* Radial halo behind avatar for extra soft spread */
+  .avatar-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(94, 230, 165, 0.22) 0%, rgba(94, 230, 165, 0.06) 35%, transparent 65%);
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(16px);
+    animation: halo-pulse 3.5s ease-in-out infinite;
+  }
+
+  @keyframes halo-pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .avatar-wrap img {
+    position: relative;
+    z-index: 1;
   }
 
   /* ============ STAGGERED REVEAL ============ */
