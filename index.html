@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudentenLeads — Warme B2B leads via echte studenten</title>
+<meta name="description" content="Warme B2B leads voor MKB-bedrijven via authentieke student-outreach op LinkedIn. 3× meer reply rate dan klassieke cold outreach.">
+<meta property="og:title" content="StudentenLeads — Warme B2B leads via echte studenten">
+<meta property="og:description" content="3× meer reply rate dan klassieke cold outreach. Warme leads via authentieke student-outreach.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-dark: #0b1120;
+    --bg-accent: #f8fafc;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --accent: #10b981;
+    --accent-dark: #059669;
+    --border: #e2e8f0;
+    --border-dark: #1e293b;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--bg-dark);
+    color: white;
+    padding: 80px 0 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(16,185,129,0.15), transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59,130,246,0.1), transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    margin-bottom: 48px;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .brand-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  h1 {
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    max-width: 780px;
+  }
+
+  h1 .accent {
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: clamp(17px, 2vw, 20px);
+    color: rgba(255,255,255,0.7);
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: white;
+    padding: 16px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .hero-cta:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+  }
+
+  /* PROOF */
+  .proof {
+    background: var(--bg-accent);
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .proof-label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .stat {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-value .accent {
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .proof-note {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 80px 0;
+  }
+
+  h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .section-intro {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+
+  /* HOW IT WORKS */
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    padding: 28px;
+    background: var(--bg-accent);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+
+  .step-num {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: var(--text);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .step h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .step p {
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+
+  /* VOOR WIE */
+  .targets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .target {
+    padding: 20px 24px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .target::before {
+    content: '✓ ';
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* FOUNDER */
+  .founder {
+    background: var(--bg-accent);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .founder-content {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  @media (max-width: 600px) {
+    .founder-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .avatar { margin: 0 auto; }
+  }
+
+  .avatar {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981, #059669);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 42px;
+    font-weight: 700;
+    border: 4px solid white;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .founder h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .founder-role {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .founder-bio {
+    color: var(--text);
+    font-size: 15px;
+    max-width: 520px;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--bg-dark);
+    color: white;
+    text-align: center;
+  }
+
+  .contact h2 {
+    color: white;
+  }
+
+  .contact .section-intro {
+    color: rgba(255,255,255,0.65);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .contact-link {
+    padding: 14px 24px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background 0.15s ease;
+  }
+
+  .contact-link:hover {
+    background: rgba(255,255,255,0.15);
+  }
+
+  .contact-link.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .contact-link.primary:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
+
+  footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container hero-content">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      StudentenLeads
+    </div>
+    <h1>Warme B2B-leads via echte studenten.<br><span class="accent">3× meer respons</span> dan klassieke cold outreach.</h1>
+    <p class="hero-sub">Wij benaderen MKB-directeuren vanuit authentieke studentenprofielen met een marktonderzoek-aanpak. Het resultaat: directeuren reageren, praten terug en geven expliciet toestemming om benaderd te worden. Jij krijgt alleen de warme leads geleverd.</p>
+    <a href="#contact" class="hero-cta">Laten we praten →</a>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="container">
+    <div class="proof-label">Bewezen op een 4-weekse pilot</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">225</div>
+        <div class="stat-label">Connection requests verstuurd</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">21,8<span class="accent">%</span></div>
+        <div class="stat-label">Accept rate (branche-norm)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">59,2<span class="accent">%</span></div>
+        <div class="stat-label">Reply rate (3× branche-norm)</div>
+      </div>
+    </div>
+    <p class="proof-note">Data uit onze pilot voor een Nederlands MKB-platform. De industrie-benchmark voor reply rate na accept ligt op 15–25% — onze student-aanpak haalt drie keer zoveel echte gesprekken uit dezelfde outreach.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Hoe het werkt</h2>
+    <p class="section-intro">Vier stappen. Geen telefoongesprekken, geen gehate cold calls, geen sales-gedoe. Alleen data die je kunt opvolgen.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Hyper-niche leadlist</h3>
+          <p>We bouwen via Sales Navigator en AI-gedreven data-verrijking een leadlist die precies past bij jouw doelgroep — inclusief criteria die standaardtools niet bieden.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Student-outreach via LinkedIn</h3>
+          <p>Echte studenten benaderen directeuren met een marktonderzoek-framing. Directeuren hebben een natuurlijk zwak voor studenten die oprecht iets willen leren — dat is de onmisbare trust-hefboom.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Marktonderzoek + expliciete opt-in</h3>
+          <p>De geïnteresseerde directeur vult een kort onderzoek in en geeft zelf aan of hij benaderd mag worden. AVG-compliant, volledig vrijwillig.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Warme leads direct naar jou</h3>
+          <p>Je ontvangt de leadlijst met naam, bedrijf, LinkedIn-URL en hun survey-antwoorden. Klaar om op te volgen. Pro-rata betaling op daadwerkelijk geleverde leads.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--bg-accent); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <h2>Voor wie dit werkt</h2>
+    <p class="section-intro">Bouw een eerlijk, herhaalbaar sales-funnel zonder zelf een SDR-team op te zetten. We werken v1 exclusief met Nederlandse MKB'ers in:</p>
+    <div class="targets">
+      <div class="target">B2B-dienstverleners (3–50 FTE)</div>
+      <div class="target">MKB met eigenaar die zelf sales doet</div>
+      <div class="target">Sectoren met duidelijk geformuleerde ICP</div>
+      <div class="target">Bedrijven met honger naar groei</div>
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <div class="container">
+    <h2>De mens erachter</h2>
+    <div class="founder-content" style="margin-top: 32px;">
+      <div class="avatar">
+        <!-- Vervang dit door een echte foto: <img src="images/stan.jpg" alt="Stan van Dijk"> -->
+        SvD
+      </div>
+      <div>
+        <h3>Stan van Dijk</h3>
+        <div class="founder-role">Student Commerciële Economie · Hanzehogeschool Groningen</div>
+        <p class="founder-bio">Ik ben Stan. Naast mijn studie heb ik dit jaar een LinkedIn outreach-methode ontwikkeld die meetbaar drie keer beter presteert dan de branche-standaard. Ik heb het getest voor een Nederlands MKB-platform en zoek nu <strong>één tot twee externe klanten</strong> om de methode verder te bewijzen voordat ik het officieel opzet als bedrijf. Transparant, zonder betaling vooraf, met eerlijke pricing per klant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Interesse? Laten we praten.</h2>
+    <p class="section-intro">Ik voer deze week en volgende week een handjevol discovery-gesprekken met ondernemers. Als je denkt dat dit iets voor je is — stuur een bericht via LinkedIn of mail. Ook als je gewoon nieuwsgierig bent.</p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/stanvdijk1/" target="_blank" rel="noopener" class="contact-link primary">LinkedIn: Stan van Dijk →</a>
+      <a href="mailto:stan@studentenleads.nl" class="contact-link">stan@studentenleads.nl</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    StudentenLeads · Pre-launch · Gevestigd in Groningen · © 2026
+  </div>
+</footer>
+
+</body>
+</html>
